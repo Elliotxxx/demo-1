@@ -66,10 +66,10 @@ const Hero: React.FC = () => {
             <div className="absolute -bottom-12 -left-12 w-80 h-80 bg-primary/20 rounded-full blur-3xl mix-blend-multiply"></div>
             
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-white aspect-[4/5] md:aspect-[4/3] group ring-1 ring-black/5">
-              <img 
+           <img
   src={consultorio}
-  alt="Consultorio de terapia moderno" 
-  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+  alt="Consultorio de terapia moderno"
+  className="w-full h-full object-cover object-[60%_40%] transition-transform duration-1000 group-hover:scale-105"
 />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8 text-white">
