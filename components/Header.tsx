@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from "../assets/LOGO_MS (1).svg";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,12 +34,16 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-4 cursor-pointer group">
-            <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg group-hover:bg-secondary transition-colors duration-300">
-              <span className="font-serif text-2xl font-bold italic">MS</span>
-            </div>
+            <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg group-hover:scale-105 transition-all duration-300">
+              <img
+                src={logo}
+                  alt="Clínica MS"
+                  className="w-full h-full object-cover"
+/>
+</div>
             <div className="flex flex-col">
               <h1 className="text-xl font-serif font-bold tracking-wide text-primary">Clínica MS</h1>
-              <span className="text-[10px] text-stone-500 tracking-widest uppercase">Psicoterapia Integral</span>
+              <span className="text-[10px] text-stone-500 tracking-widest uppercase">Psicoterapia</span>
             </div>
           </div>
 

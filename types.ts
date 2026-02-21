@@ -16,3 +16,9 @@ export interface NavLink {
   label: string;
   href: string;
 }
+
+
+
+/// <reference types="vite/client" />
+
+

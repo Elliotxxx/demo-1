@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
+import consultorio from "../assets/cosultorio.png";
 
 const Hero: React.FC = () => {
   return (
@@ -16,8 +17,8 @@ const Hero: React.FC = () => {
             </div>
             
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-medium leading-[1.1] text-primary">
-              Recupera tu <br/>
-              <span className="italic text-secondary">paz mental</span>
+              Evoluciona <br/>
+              <span className="italic text-secondary">tu mente</span>
             </h1>
             
             <p className="text-lg text-stone-600 leading-relaxed max-w-lg font-light">
@@ -61,10 +62,10 @@ const Hero: React.FC = () => {
             
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-white aspect-[4/5] md:aspect-[4/3] group ring-1 ring-black/5">
               <img 
-                alt="Consultorio de terapia moderno" 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
-                src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?q=80&w=2070&auto=format&fit=crop"
-              />
+  src={consultorio}
+  alt="Consultorio de terapia moderno" 
+  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+/>
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8 text-white">
                 <p className="font-serif text-2xl italic">"Un espacio para sanar"</p>

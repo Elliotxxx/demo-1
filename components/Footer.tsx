@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
-                <span className="font-serif italic font-bold">MS</span>
+                <span className="font-serif italic font-bold">ms</span>
               </div>
               <span className="text-2xl font-serif text-primary">Clínica MS</span>
             </div>
