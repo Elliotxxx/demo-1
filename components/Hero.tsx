@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
-import consultorio from "../assets/cosultorio.png";
+import consultorio from "../assets/session.png";
 
 const Hero: React.FC = () => {
   return (
@@ -26,9 +26,14 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5 mt-2">
-              <button className="flex items-center justify-center bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full text-base font-medium transition-all shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1">
-                Reservar Consulta
-              </button>
+              <a
+  href="https://wa.me/5215525608725?text=Hola,%20buen%20d%C3%ADa.%20Me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20consulta%20psicol%C3%B3gica.%20%C2%BFPodr%C3%ADan%20brindarme%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20costos%3F%20Gracias."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center justify-center bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full text-base font-medium transition-all shadow-lg hover:shadow-primary/20 transform hover:-translate-y-1"
+>
+  Reservar Consulta
+</a>
               <button className="flex items-center justify-center bg-transparent border border-primary/30 hover:bg-primary/5 text-primary px-8 py-4 rounded-full text-base font-medium transition-all">
                 Conocer Más
               </button>

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { MapPin, Phone, Mail, Globe, Instagram } from 'lucide-react';
+import ubi from "../assets/ubi.png";
 
 const Footer: React.FC = () => {
   return (
@@ -44,33 +45,42 @@ const Footer: React.FC = () => {
             <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-6">Contáctanos</h4>
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-4 text-stone-500 text-sm group">
-                <MapPin size={18} className="text-primary mt-0.5 group-hover:scale-110 transition-transform" />
-                <span>Av. Reforma 123, Oficina 400<br/>Ciudad de México, CDMX</span>
-              </li>
+  <MapPin size={18} className="text-primary mt-1 group-hover:scale-110 transition-transform" />
+  <div className="flex flex-col leading-relaxed">
+    <span className="font-medium text-stone-700">Melesio Morales #2-A, Int. 2</span>
+    <span>Ciudad Satélite, Naucalpan de Juárez</span>
+    <span>Estado de México, C.P. 53100</span>
+  </div>
+</li>
               <li className="flex items-center gap-4 text-stone-500 text-sm group">
                 <Phone size={18} className="text-primary group-hover:scale-110 transition-transform" />
-                <span>(55) 1234-5678</span>
+                <span>(+52) 55 2560 8725</span>
               </li>
               <li className="flex items-center gap-4 text-stone-500 text-sm group">
                 <Mail size={18} className="text-primary group-hover:scale-110 transition-transform" />
-                <span>hola@clinicams.com</span>
+                <span>analizate4@gmail.com</span>
               </li>
             </ul>
           </div>
 
-          {/* Map Placeholder */}
-          <div className="w-full h-56 rounded-3xl overflow-hidden bg-stone-200 relative shadow-inner group">
-            <img 
-              alt="Ubicación" 
-              className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" 
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop"
-            />
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="bg-primary text-white p-3 rounded-full shadow-lg animate-bounce">
-                <MapPin size={24} fill="currentColor" />
-              </div>
-            </div>
-          </div>
+         <a
+  href="https://maps.app.goo.gl/JMDKhMkEAiPPxgqS6?g_st=ic"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full h-56 rounded-3xl overflow-hidden bg-stone-200 relative shadow-inner group cursor-pointer transform hover:scale-[1.02] transition"
+>
+  <img 
+  src={ubi}
+  alt="Ubicación" 
+  className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" 
+/>
+  
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div className="bg-primary text-white p-3 rounded-full shadow-lg animate-bounce">
+      <MapPin size={24} fill="currentColor" />
+    </div>
+  </div>
+</a>
         </div>
 
         <div className="border-t border-stone-200 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">

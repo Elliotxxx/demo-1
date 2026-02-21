@@ -2,6 +2,11 @@
 import React from 'react';
 import { Brain, Users, Leaf, Baby, Shield, Smile } from 'lucide-react';
 import { ServiceCardProps } from '../types';
+import {  HeartPulse } from "lucide-react";
+import { MessageCircle } from "lucide-react";
+import { CloudRain } from "lucide-react";
+import { User } from "lucide-react";
+
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => (
   <div className="bg-background-light p-10 rounded-[2rem] transition-all duration-500 hover:-translate-y-2 hover:shadow-xl border border-stone-100 group">
@@ -17,36 +22,36 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) =
 
 const Services: React.FC = () => {
   const services = [
+   {
+  icon: <User size={30} strokeWidth={1.5} />,
+  title: "Terapia Individual",
+  description: "Sesiones uno a uno para explorar tus pensamientos y sentimientos en un espacio seguro y confidencial adaptado a tu crecimiento personal."
+},
     {
-      icon: <Brain size={30} strokeWidth={1.5} />,
-      title: "Terapia Individual",
-      description: "Sesiones uno a uno para explorar tus pensamientos y sentimientos en un espacio seguro y confidencial adaptado a tu crecimiento personal."
-    },
+  icon: <HeartPulse size={30} strokeWidth={1.5} />,
+  title: "Manejo de Ansiedad",
+  description: "Aprende a controlar la ansiedad mediante técnicas efectivas, regulación emocional y acompañamiento profesional."
+},
     {
-      icon: <Users size={30} strokeWidth={1.5} />,
-      title: "Consejería de Pareja",
-      description: "Fortalece tu relación a través de la comunicación guiada, la comprensión mutua y estrategias efectivas de resolución de conflictos."
-    },
+  icon: <Shield size={30} strokeWidth={1.5} />,
+  title: "Regulación Emocional",
+  description: "Desarrolla resiliencia y aprende a gestionar tus emociones de forma saludable frente a los desafíos de la vida."
+},
     {
-      icon: <Leaf size={30} strokeWidth={1.5} />,
-      title: "Mindfulness",
-      description: "Aprende técnicas prácticas para mantenerte presente, reducir la ansiedad y cultivar una sensación de paz interior en tu vida diaria."
-    },
+  icon: <CloudRain size={30} strokeWidth={1.5} />,
+  title: "Depresión",
+  description: "Acompañamiento profesional para comprender y superar la depresión, fortaleciendo el bienestar emocional y la calidad de vida."
+},
+   {
+  icon: <MessageCircle size={30} strokeWidth={1.5} />,
+  title: "Comunicación No Violenta",
+  description: "Aprende a expresar tus emociones y necesidades de forma clara y respetuosa, fortaleciendo tus relaciones personales."
+},
     {
-      icon: <Baby size={30} strokeWidth={1.5} />,
-      title: "Niños y Adolescentes",
-      description: "Apoyo especializado para mentes jóvenes, ayudándoles a navegar etapas de desarrollo y desafíos emocionales complejos."
-    },
-    {
-      icon: <Shield size={30} strokeWidth={1.5} />,
-      title: "Terapia Grupal",
-      description: "Conecta con otros que enfrentan luchas similares en un entorno facilitado que fomenta la sanación compartida y el apoyo."
-    },
-    {
-      icon: <Smile size={30} strokeWidth={1.5} />,
-      title: "Ansiedad y Depresión",
-      description: "Tratamientos basados en evidencia como TCC para ayudar a manejar síntomas y recuperar el control de tu bienestar emocional."
-    }
+  icon: <Brain size={30} strokeWidth={1.5} />,
+  title: "Concentración y Memoria",
+  description: "Mejora tu enfoque y claridad mental, fortaleciendo la memoria y tu rendimiento en las actividades diarias."
+}
   ];
 
   return (

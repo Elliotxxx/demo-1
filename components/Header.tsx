@@ -63,9 +63,14 @@ const Header: React.FC = () => {
 
           {/* CTA */}
           <div className="flex items-center gap-4">
-            <button className="hidden sm:flex bg-primary hover:bg-secondary text-white px-7 py-3 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:scale-95">
-              Agenda tu sesión
-            </button>
+            <a
+  href="https://wa.me/5215525608725?text=Hola,%20quiero%20agendar%20una%20cita."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hidden sm:flex bg-primary hover:bg-secondary text-white px-7 py-3 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:scale-95"
+>
+  Agenda tu sesión 
+</a>
             <button 
               className="md:hidden p-2 rounded-full text-stone-600 hover:bg-stone-100 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -91,7 +96,7 @@ const Header: React.FC = () => {
               </a>
             ))}
             <button className="bg-primary text-white py-4 rounded-xl font-medium mt-4">
-              Agenda tu sesión
+              Agenda sssssss
             </button>
           </nav>
         </div>
