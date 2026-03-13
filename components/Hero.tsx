@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
-import consultorio from "../assets/session.png";
+import consultorio from "../assets/session.svg";
 
 const Hero: React.FC = () => {
   return (

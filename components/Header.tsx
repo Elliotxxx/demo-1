@@ -24,7 +24,8 @@ const Header: React.FC = () => {
 
   return (
     <header 
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+       
+  className={`sticky top-0 z-50 w-full relative transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-stone-100 h-20' 
           : 'bg-transparent h-24'
@@ -42,7 +43,7 @@ const Header: React.FC = () => {
 />
 </div>
             <div className="flex flex-col">
-              <h1 className="text-xl font-serif font-bold tracking-wide text-primary">Clínica MS</h1>
+              <h1 className="text-xl font-serif font-bold tracking-wide text-primary">MS</h1>
               <span className="text-[10px] text-stone-500 tracking-widest uppercase">Psicoterapia</span>
             </div>
           </div>
@@ -82,25 +83,31 @@ const Header: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-stone-200 animate-in fade-in slide-in-from-top-4 duration-300">
-          <nav className="flex flex-col p-6 gap-4">
-            {navLinks.map((link) => (
-              <a 
-                key={link.label}
-                href={link.href}
-                className="text-lg font-serif text-stone-600 hover:text-primary"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
-            <button className="bg-primary text-white py-4 rounded-xl font-medium mt-4">
-              Agenda sssssss
-            </button>
-          </nav>
-        </div>
-      )}
+     {isMobileMenuOpen && (
+  <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-stone-200 shadow-lg animate-in fade-in slide-in-from-top-4 duration-300">
+    <nav className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4">
+      {navLinks.map((link) => (
+        <a
+          key={link.label}
+          href={link.href}
+          className="text-lg font-serif text-stone-600 hover:text-primary"
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          {link.label}
+        </a>
+      ))}
+
+      <a
+        href="https://wa.me/5215525608725?text=Hola,%20quiero%20agendar%20una%20cita."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-primary text-white py-4 rounded-xl font-medium mt-4 text-center"
+      >
+        Agenda
+      </a>
+    </nav>
+  </div>
+)}
     </header>
   );
 };

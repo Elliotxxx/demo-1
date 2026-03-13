@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
                 <span className="font-serif italic font-bold">ms</span>
               </div>
-              <span className="text-2xl font-serif text-primary">Clínica MS</span>
+              <span className="text-2xl font-serif text-primary">Clínicaaaaaa MS</span>
             </div>
             <p className="text-stone-500 text-sm leading-relaxed font-light">
               Cuidado compasivo para un mañana mejor. Nos dedicamos a proporcionar servicios de salud mental de la más alta calidad y calidez humana.
