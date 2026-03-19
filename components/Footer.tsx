@@ -1,95 +1,197 @@
-
 import React from 'react';
-import { MapPin, Phone, Mail, Globe, Instagram } from 'lucide-react';
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Globe,
+  Instagram,
+  Facebook,
+  MessageCircle
+} from 'lucide-react';
+
 import ubi from "../assets/ubi.png";
+import logo from "../assets/LOGO_MS (1).svg";
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-background-light border-t border-stone-200 pt-20 pb-10">
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* GRID PRINCIPAL */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
-          {/* Brand Info */}
+
+          {/* 🔵 BRAND */}
           <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
-                <span className="font-serif italic font-bold">ms</span>
+
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white shadow-md">
+                <img
+                  src={logo}
+                  alt="MS Psicoterapia"
+                  className="w-9 h-9 object-contain"
+                />
               </div>
-              <span className="text-2xl font-serif text-primary">Clínicaaaaaa MS</span>
+
+              <div>
+                <span className="text-xl font-serif text-primary block leading-none">
+                  MS
+                </span>
+                <span className="text-xs tracking-widest text-stone-500 uppercase">
+                  Psicoterapia
+                </span>
+              </div>
             </div>
-            <p className="text-stone-500 text-sm leading-relaxed font-light">
-              Cuidado compasivo para un mañana mejor. Nos dedicamos a proporcionar servicios de salud mental de la más alta calidad y calidez humana.
+
+            <p className="text-stone-500 text-sm leading-relaxed">
+              Un espacio seguro de acompañamiento emocional. Atención profesional,
+              cercana y enfocada en tu bienestar.
             </p>
-            <div className="flex gap-4 mt-2">
-              <a href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-stone-400 hover:text-primary hover:shadow-md transition-all">
+
+            {/* REDES */}
+            <div className="flex gap-4">
+
+              <a
+                href="https://msdemo1.netlify.app"
+                target="_blank"
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-stone-400 hover:text-primary hover:shadow-md transition"
+              >
                 <Globe size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-stone-400 hover:text-primary hover:shadow-md transition-all">
+
+              <a
+                href="https://instagram.com/"
+                target="_blank"
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-stone-400 hover:text-primary hover:shadow-md transition"
+              >
                 <Instagram size={18} />
               </a>
+
+              <a
+                href="https://facebook.com/"
+                target="_blank"
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-stone-400 hover:text-primary hover:shadow-md transition"
+              >
+                <Facebook size={18} />
+              </a>
+
+              <a
+                href="https://wa.me/525525608725?text=Hola,%20me%20gustaría%20recibir%20más%20información%20sobre%20las%20sesiones%20de%20psicoterapia"
+                target="_blank"
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-stone-400 hover:text-primary hover:shadow-md transition"
+              >
+                <MessageCircle size={18} />
+              </a>
+
             </div>
           </div>
 
-          {/* Links */}
+          {/* 🔗 LINKS */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-6">Enlaces Rápidos</h4>
-            <ul className="flex flex-col gap-4">
-              <li><a className="text-stone-500 hover:text-primary text-sm font-medium transition-colors" href="#">Sobre Nosotros</a></li>
-              <li><a className="text-stone-500 hover:text-primary text-sm font-medium transition-colors" href="#">Nuestros Servicios</a></li>
-              <li><a className="text-stone-500 hover:text-primary text-sm font-medium transition-colors" href="#">Recursos</a></li>
-              <li><a className="text-stone-500 hover:text-primary text-sm font-medium transition-colors" href="#">Carreras</a></li>
-            </ul>
-          </div>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-6">
+              Enlaces
+            </h4>
 
-          {/* Contact */}
-          <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-6">Contáctanos</h4>
             <ul className="flex flex-col gap-4">
-              <li className="flex items-start gap-4 text-stone-500 text-sm group">
-  <MapPin size={18} className="text-primary mt-1 group-hover:scale-110 transition-transform" />
-  <div className="flex flex-col leading-relaxed">
-    <span className="font-medium text-stone-700">Melesio Morales #2-A, Int. 2</span>
-    <span>Ciudad Satélite, Naucalpan de Juárez</span>
-    <span>Estado de México, C.P. 53100</span>
-  </div>
-</li>
-              <li className="flex items-center gap-4 text-stone-500 text-sm group">
-                <Phone size={18} className="text-primary group-hover:scale-110 transition-transform" />
-                <span>(+52) 55 2560 8725</span>
+              <li>
+                <a href="#nosotros" className="text-stone-500 hover:text-primary text-sm transition">
+                  Sobre mí
+                </a>
               </li>
-              <li className="flex items-center gap-4 text-stone-500 text-sm group">
-                <Mail size={18} className="text-primary group-hover:scale-110 transition-transform" />
-                <span>analizate4@gmail.com</span>
+              <li>
+                <a href="#servicios" className="text-stone-500 hover:text-primary text-sm transition">
+                  Servicios
+                </a>
+              </li>
+              <li>
+                <a href="#contacto" className="text-stone-500 hover:text-primary text-sm transition">
+                  Contacto
+                </a>
               </li>
             </ul>
           </div>
 
-         <a
-  href="https://maps.app.goo.gl/JMDKhMkEAiPPxgqS6?g_st=ic"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="block w-full h-56 rounded-3xl overflow-hidden bg-stone-200 relative shadow-inner group cursor-pointer transform hover:scale-[1.02] transition"
->
-  <img 
-  src={ubi}
-  alt="Ubicación" 
-  className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" 
-/>
-  
-  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-    <div className="bg-primary text-white p-3 rounded-full shadow-lg animate-bounce">
-      <MapPin size={24} fill="currentColor" />
-    </div>
-  </div>
-</a>
+          {/* 📞 CONTACTO */}
+          <div>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-6">
+              Contacto
+            </h4>
+
+            <ul className="flex flex-col gap-4 text-sm text-stone-500">
+
+              <li className="flex gap-4">
+                <MapPin size={18} className="text-primary mt-1" />
+                <div>
+                  <p className="text-stone-700 font-medium">
+                    Melesio Morales #2-A
+                  </p>
+                  <p>Ciudad Satélite, Naucalpan</p>
+                  <p>Estado de México</p>
+                </div>
+              </li>
+
+              <li className="flex gap-4 items-center">
+                <Phone size={18} className="text-primary" />
+                <a href="tel:+525525608725" className="hover:text-primary">
+                  (+52) 55 2560 8725
+                </a>
+              </li>
+
+              <li className="flex gap-4 items-center">
+                <Mail size={18} className="text-primary" />
+                <a
+                  href="mailto:ms.psicoterapia.mx@gmail.com"
+                  className="hover:text-primary break-all"
+                >
+                  ms.psicoterapia.mx@gmail.com
+                </a>
+              </li>
+
+              <li className="flex gap-4 items-center">
+                <MessageCircle size={18} className="text-primary" />
+                <a
+                  href="https://wa.me/525525608725?text=Hola,%20me%20gustaría%20recibir%20información"
+                  target="_blank"
+                  className="hover:text-primary"
+                >
+                  WhatsApp directo
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+          {/* 📍 MAPA */}
+          <div>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-6">
+              Ubicación
+            </h4>
+
+            <a
+              href="https://maps.app.goo.gl/JMDKhMkEAiPPxgqS6?g_st=ic"
+              target="_blank"
+              className="block w-full h-56 rounded-3xl overflow-hidden relative shadow-inner group hover:scale-[1.02] transition"
+            >
+              <img
+                src={ubi}
+                className="w-full h-full object-cover opacity-70 grayscale group-hover:grayscale-0 transition"
+              />
+
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="bg-primary text-white p-3 rounded-full shadow-lg animate-bounce">
+                  <MapPin size={24} fill="currentColor" />
+                </div>
+              </div>
+            </a>
+          </div>
+
         </div>
 
-        <div className="border-t border-stone-200 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-stone-400 text-xs">© 2024 Clínica de Psicoterapia MS. Todos los derechos reservados.</p>
-          <div className="flex gap-8">
-            <a className="text-stone-400 hover:text-primary text-xs font-medium transition-colors" href="#">Política de Privacidad</a>
-            <a className="text-stone-400 hover:text-primary text-xs font-medium transition-colors" href="#">Términos de Servicio</a>
-          </div>
+        {/* 🔻 FOOTER FINAL */}
+        <div className="border-t border-stone-200 pt-8 text-center text-xs text-stone-400">
+          © 2024 MS Psicoterapia · Todos los derechos reservados
         </div>
+
       </div>
     </footer>
   );
