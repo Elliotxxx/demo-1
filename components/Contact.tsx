@@ -36,11 +36,12 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+          
           {/* Tarjeta izquierda */}
           <div className="relative bg-white/80 backdrop-blur-xl rounded-[2.5rem] border border-white/60 shadow-xl p-8 md:p-10 overflow-hidden">
             <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 blur-3xl rounded-full"></div>
 
-            {/* Encabezado con logo */}
+            {/* Encabezado */}
             <div className="flex items-center gap-4 mb-10">
               <div className="w-20 h-20 rounded-3xl bg-white shadow-md flex items-center justify-center p-3 shrink-0">
                 <img
@@ -62,12 +63,23 @@ const Contact: React.FC = () => {
 
             {/* Información */}
             <div className="space-y-6 text-stone-700">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-background-light flex items-center justify-center text-primary shrink-0">
+
+              {/* Dirección */}
+              <a
+                href="https://maps.app.goo.gl/r8HjLwTejhRTpZcz8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 group cursor-pointer hover:bg-white/50 p-2 rounded-xl transition"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-background-light flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition">
                   <MapPin size={22} strokeWidth={1.8} />
                 </div>
+
                 <div>
-                  <p className="font-semibold text-primary">Dirección</p>
+                  <p className="font-semibold text-primary group-hover:underline">
+                    Dirección
+                  </p>
+
                   <p className="text-sm text-stone-600 leading-relaxed">
                     Melesio Morales #2-A, Int. 2
                     <br />
@@ -76,25 +88,37 @@ const Contact: React.FC = () => {
                     Estado de México, C.P. 53100
                   </p>
                 </div>
-              </div>
+              </a>
 
+              {/* Teléfono */}
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-background-light flex items-center justify-center text-primary shrink-0">
                   <Phone size={22} strokeWidth={1.8} />
                 </div>
                 <div>
                   <p className="font-semibold text-primary">Teléfono</p>
-                  <p className="text-sm text-stone-600">(+52) 55 2560 8725</p>
+                  <a
+                    href="tel:+525525608725"
+                    className="text-sm text-stone-600 hover:text-primary transition"
+                  >
+                    (+52) 55 2560 8725
+                  </a>
                 </div>
               </div>
 
+              {/* Correo */}
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-background-light flex items-center justify-center text-primary shrink-0">
                   <Mail size={22} strokeWidth={1.8} />
                 </div>
                 <div>
                   <p className="font-semibold text-primary">Correo electrónico</p>
-                  <p className="text-sm text-stone-600">analizate4@gmail.com</p>
+                  <a
+                    href="mailto:ms.psicoterapia.mx@gmail.com"
+                    className="text-sm text-stone-600 hover:text-primary transition break-all"
+                  >
+                    ms.psicoterapia.mx@gmail.com
+                  </a>
                 </div>
               </div>
             </div>
@@ -106,29 +130,23 @@ const Contact: React.FC = () => {
               </p>
 
               <div className="grid sm:grid-cols-3 gap-4">
+
+                {/* WhatsApp */}
                 <a
-                  href="https://wa.me/525525608725"
+                  href="https://wa.me/525525608725?text=Hola,%20me%20gustaría%20recibir%20más%20información"
                   target="_blank"
                   rel="noreferrer"
                   className="group rounded-2xl border border-stone-200 bg-white p-4 hover:shadow-lg transition-all"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <MessageCircle
-                      className="text-primary"
-                      size={22}
-                      strokeWidth={1.8}
-                    />
-                    <ArrowUpRight
-                      size={18}
-                      className="text-stone-400 group-hover:text-primary transition-colors"
-                    />
+                    <MessageCircle className="text-primary" size={22} strokeWidth={1.8} />
+                    <ArrowUpRight size={18} className="text-stone-400 group-hover:text-primary transition" />
                   </div>
                   <p className="font-semibold text-primary">WhatsApp</p>
-                  <p className="text-xs text-stone-500 mt-1">
-                    Escríbeme directamente
-                  </p>
+                  <p className="text-xs text-stone-500 mt-1">Escríbeme directamente</p>
                 </a>
 
+                {/* Instagram */}
                 <a
                   href="https://instagram.com/tuusuario"
                   target="_blank"
@@ -136,20 +154,14 @@ const Contact: React.FC = () => {
                   className="group rounded-2xl border border-stone-200 bg-white p-4 hover:shadow-lg transition-all"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <Instagram
-                      className="text-primary"
-                      size={22}
-                      strokeWidth={1.8}
-                    />
-                    <ArrowUpRight
-                      size={18}
-                      className="text-stone-400 group-hover:text-primary transition-colors"
-                    />
+                    <Instagram className="text-primary" size={22} strokeWidth={1.8} />
+                    <ArrowUpRight size={18} className="text-stone-400 group-hover:text-primary transition" />
                   </div>
                   <p className="font-semibold text-primary">Instagram</p>
                   <p className="text-xs text-stone-500 mt-1">@tuusuario</p>
                 </a>
 
+                {/* Facebook */}
                 <a
                   href="https://facebook.com/tuusuario"
                   target="_blank"
@@ -157,19 +169,13 @@ const Contact: React.FC = () => {
                   className="group rounded-2xl border border-stone-200 bg-white p-4 hover:shadow-lg transition-all"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <Facebook
-                      className="text-primary"
-                      size={22}
-                      strokeWidth={1.8}
-                    />
-                    <ArrowUpRight
-                      size={18}
-                      className="text-stone-400 group-hover:text-primary transition-colors"
-                    />
+                    <Facebook className="text-primary" size={22} strokeWidth={1.8} />
+                    <ArrowUpRight size={18} className="text-stone-400 group-hover:text-primary transition" />
                   </div>
                   <p className="font-semibold text-primary">Facebook</p>
                   <p className="text-xs text-stone-500 mt-1">Psicoterapia MS</p>
                 </a>
+
               </div>
             </div>
           </div>
@@ -198,7 +204,7 @@ const Contact: React.FC = () => {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/525525608725"
+                href="https://wa.me/525525608725?text=Hola,%20me%20gustaría%20recibir%20más%20información"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-primary text-white px-8 py-4 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
@@ -207,13 +213,14 @@ const Contact: React.FC = () => {
               </a>
 
               <a
-                href="mailto:analizate4@gmail.com"
+                href="mailto:ms.psicoterapia.mx@gmail.com"
                 className="inline-flex items-center justify-center rounded-full border border-primary/20 text-primary px-8 py-4 font-semibold hover:bg-primary/5 transition-all"
               >
                 Enviar correo
               </a>
             </div>
           </div>
+
         </div>
       </div>
     </section>

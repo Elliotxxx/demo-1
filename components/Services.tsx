@@ -5,14 +5,19 @@ import { HeartPulse } from "lucide-react";
 import { MessageCircle } from "lucide-react";
 import { CloudRain } from "lucide-react";
 import { User } from "lucide-react";
+import { Ribbon } from "lucide-react";
 import { Bandage } from "lucide-react";
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => (
-  <div className="bg-background-light p-10 rounded-[2rem] transition-all duration-500 hover:-translate-y-2 hover:shadow-xl border border-stone-100 group">
-    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+  <div className="bg-background-light p-10 rounded-[2rem] min-h-[320px] h-full transition-all duration-500 hover:-translate-y-2 hover:shadow-xl border border-stone-100 group flex flex-col">
+    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
       {icon}
     </div>
-    <h4 className="text-2xl font-serif text-primary mb-4">{title}</h4>
+
+    <h4 className="text-2xl font-serif text-primary mb-4 leading-tight min-h-[64px]">
+      {title}
+    </h4>
+
     <p className="text-stone-600 leading-relaxed font-light text-sm">
       {description}
     </p>
@@ -47,9 +52,9 @@ const Services: React.FC = () => {
       description: "Aprende a expresar tus emociones y necesidades de forma clara y respetuosa, fortaleciendo tus relaciones personales."
     },
     {
-      icon: <Brain size={30} strokeWidth={1.5} />,
-      title: "Concentración y Memoria",
-      description: "Mejora tu enfoque y claridad mental, fortaleciendo la memoria y tu rendimiento en las actividades diarias."
+      icon: <Ribbon size={30} strokeWidth={1.5} />,
+      title: "Atención a pacientes oncológicos",
+      description: "Acompañamiento emocional durante el proceso oncológico, fortaleciendo el bienestar y la resiliencia."
     },
     {
       icon: <Bandage size={30} strokeWidth={1.5} />,
@@ -76,11 +81,11 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {services.map((service, idx) => (
             <div
               key={idx}
-              className={idx === services.length - 1 ? "lg:col-start-2" : ""}
+              className={idx === services.length - 1 ? "lg:col-start-2 h-full" : "h-full"}
             >
               <ServiceCard {...service} />
             </div>
