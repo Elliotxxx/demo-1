@@ -20,8 +20,8 @@ const Community: React.FC = () => {
               Síguenos en Instagram para obtener consejos diarios de mindfulness, recursos de salud mental e historias inspiradoras.
             </p>
           </div>
-          <a href="#" className="flex items-center gap-3 text-primary font-bold hover:opacity-70 transition-opacity group">
-            <span className="text-lg">@clinica_ms</span>
+          <a href="https://instagram.com/ms.psicoterapia.mx" className="flex items-center gap-3 text-primary font-bold hover:opacity-70 transition-opacity group">
+            <span className="text-lg">@ms.psicoterapia.mx</span>
             <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
         </div>

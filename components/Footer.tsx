@@ -11,6 +11,7 @@ import {
 
 import ubi from "../assets/ubi.png";
 import logo from "../assets/LOGO_MS (1).svg";
+import brandText from "../assets/MS_equilibrio_interno_slogan.svg";
 
 const Footer: React.FC = () => {
   return (
@@ -30,14 +31,11 @@ const Footer: React.FC = () => {
                 />
               </div>
 
-              <div>
-                <span className="text-xl font-serif text-primary block leading-none">
-                  MS
-                </span>
-                <span className="text-xs tracking-widest text-stone-500 uppercase">
-                  Psicoterapia
-                </span>
-              </div>
+              <img
+                src={brandText}
+                alt="MS Psicoterapia – Equilibrio interno"
+                className="h-10 w-auto object-contain"
+              />
             </div>
 
             <p className="text-stone-500 text-sm leading-relaxed">
@@ -56,7 +54,7 @@ const Footer: React.FC = () => {
               </a>
 
               <a
-                href="https://instagram.com/"
+                href="https://instagram.com/ms.psicoterapia.mx"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-stone-400 hover:text-primary hover:shadow-md transition"
@@ -196,7 +194,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-stone-200 pt-8 text-center text-xs text-stone-400">
-          © 2024 MS Psicoterapia · Todos los derechos reservados
+          © 2026  MS Psicoterapia · Todos los derechos reservados
         </div>
 
       </div>
