@@ -19,7 +19,7 @@ const Header: React.FC = () => {
   const navLinks = [
     { label: 'Servicios', href: '#servicios' },
     { label: 'Nosotros', href: '#nosotros' },
-    { label: 'Recursos', href: '#recursos' },
+    { label: 'Recursos', href: '/tarjeta' },
     { label: 'Contacto', href: '#contacto' },
   ];
 
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-full">
           
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+          <a href="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
             <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg group-hover:scale-105 transition-all duration-300">
               <img
                 src={logo}
@@ -49,20 +49,31 @@ const Header: React.FC = () => {
               alt="MS Psicoterapia – Equilibrio interno"
               className="h-10 w-auto object-contain"
             />
-          </div>
+          </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-stone-600 hover:text-primary transition-colors relative group"
-              >
-                {link.label}
-                <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.href.startsWith('/') ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm font-medium text-stone-600 hover:text-primary transition-colors relative group"
+                >
+                  {link.label}
+                  <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm font-medium text-stone-600 hover:text-primary transition-colors relative group"
+                >
+                  {link.label}
+                  <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              )
+            )}
           </nav>
 
           {/* CTA */}
@@ -90,16 +101,27 @@ const Header: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-stone-200 shadow-lg animate-in fade-in slide-in-from-top-4 duration-300">
           <nav className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-lg font-serif text-stone-600 hover:text-primary"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.href.startsWith('/') ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-lg font-serif text-stone-600 hover:text-primary"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-lg font-serif text-stone-600 hover:text-primary"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              )
+            )}
 
             <a
               href="https://wa.me/5215525608725?text=Hola,%20quiero%20agendar%20una%20cita."

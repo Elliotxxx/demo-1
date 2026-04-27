@@ -163,7 +163,7 @@ const Contact: React.FC = () => {
 
                 {/* Facebook */}
                 <a
-                  href="https://facebook.com/tuusuario"
+                  href="https://www.facebook.com/share/1ACojn29e8/?mibextid=wwXIfr"
                   target="_blank"
                   rel="noreferrer"
                   className="group rounded-2xl border border-stone-200 bg-white p-4 hover:shadow-lg transition-all"
@@ -173,7 +173,7 @@ const Contact: React.FC = () => {
                     <ArrowUpRight size={18} className="text-stone-400 group-hover:text-primary transition" />
                   </div>
                   <p className="font-semibold text-primary">Facebook</p>
-                  <p className="text-xs text-stone-500 mt-1">Psicoterapia MS</p>
+                  <p className="text-xs text-stone-500 mt-1">MS Equilibrio Interno</p>
                 </a>
 
               </div>

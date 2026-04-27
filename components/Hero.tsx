@@ -34,9 +34,12 @@ const Hero: React.FC = () => {
 >
   Reservar Consulta
 </a>
-              <button className="flex items-center justify-center bg-transparent border border-primary/30 hover:bg-primary/5 text-primary px-8 py-4 rounded-full text-base font-medium transition-all">
+              <a
+                href="#servicios"
+                className="flex items-center justify-center bg-transparent border border-primary/30 hover:bg-primary/5 text-primary px-8 py-4 rounded-full text-base font-medium transition-all"
+              >
                 Conocer Más
-              </button>
+              </a>
             </div>
             
             <div className="flex items-center gap-6 mt-10 pt-8 border-t border-primary/10">

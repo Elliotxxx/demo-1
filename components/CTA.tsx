@@ -18,10 +18,15 @@ const CTA: React.FC = () => {
           Dar el primer paso es a menudo lo más difícil. Nuestro equipo está aquí para apoyarte en cada etapa. Agenda tu consulta hoy mismo.
         </p>
         
-        <button className="bg-primary hover:bg-secondary text-white px-10 py-5 rounded-full text-lg font-medium transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 inline-flex items-center gap-3 active:scale-95">
+        <a
+          href="https://wa.me/5215525608725?text=Hola,%20quiero%20agendar%20una%20cita."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-primary hover:bg-secondary text-white px-10 py-5 rounded-full text-lg font-medium transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 inline-flex items-center gap-3 active:scale-95"
+        >
           <span>Agenda tu sesión</span>
           <Calendar size={20} />
-        </button>
+        </a>
       </div>
     </section>
   );
