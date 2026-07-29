@@ -22,16 +22,16 @@ const Contact: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-secondary font-bold tracking-widest uppercase text-xs mb-4 block">
-            Contacto
+            Contacto en Ciudad Satélite
           </span>
 
           <h2 className="text-4xl md:text-5xl font-serif text-primary mb-6">
-            Estoy aquí para acompañarte
+            Psicología MS en Ciudad Satélite
           </h2>
 
           <p className="text-lg text-stone-600 font-light leading-relaxed">
-            Si deseas agendar una sesión o recibir más información, puedes
-            contactarme por cualquiera de los siguientes medios.
+            Si deseas agendar terapia en Ciudad Satélite o recibir más información,
+            puedes contactarme por cualquiera de los siguientes medios.
           </p>
         </div>
 
@@ -46,17 +46,19 @@ const Contact: React.FC = () => {
               <div className="w-20 h-20 rounded-3xl bg-white shadow-md flex items-center justify-center p-3 shrink-0">
                 <img
                   src={logo}
-                  alt="Psicoterapia MS"
+                  alt="Psicología MS en Ciudad Satélite"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain"
                 />
               </div>
 
               <div className="min-w-0">
                 <p className="text-sm uppercase tracking-[0.22em] text-secondary font-bold mb-1">
-                  Psicoterapia MS
+                  Psicología MS
                 </p>
                 <h3 className="text-2xl md:text-3xl font-serif text-primary leading-tight">
-                  Espacio de acompañamiento emocional
+                  Atención psicológica en Ciudad Satélite
                 </h3>
               </div>
             </div>
@@ -187,13 +189,13 @@ const Contact: React.FC = () => {
             </span>
 
             <h3 className="text-3xl md:text-4xl font-serif text-primary mb-6 leading-tight">
-              Un espacio seguro y cercano para ti
+              Un espacio seguro de terapia para ti
             </h3>
 
             <div className="space-y-4 text-stone-600 font-light leading-relaxed text-lg">
               <p>
                 Acompaño procesos emocionales desde un enfoque humano,
-                respetuoso y confidencial.
+                respetuoso y confidencial en Ciudad Satélite.
               </p>
 
               <p>

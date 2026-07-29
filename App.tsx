@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Award, CheckCircle2, GraduationCap, ShieldCheck, X } from 'lucide-react';
 
 import Header from './components/Header';
@@ -10,6 +10,146 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import DigitalCard from './components/DigitalCard';
 import acuaazul from "./assets/acuaazul.svg";
+
+const SITE_URL = 'https://psicoterapiams.com';
+
+const upsertMeta = (selector: string, attributes: Record<string, string>) => {
+  const existing = document.head.querySelector<HTMLMetaElement>(selector);
+  const element = existing ?? document.createElement('meta');
+
+  Object.entries(attributes).forEach(([key, value]) => {
+    element.setAttribute(key, value);
+  });
+
+  if (!existing) {
+    document.head.appendChild(element);
+  }
+};
+
+const useRouteMeta = () => {
+  useEffect(() => {
+    const isDigitalCard = window.location.pathname === '/tarjeta';
+    const title = 'MS Equilibrio Interno';
+    const description = isDigitalCard
+      ? 'Tarjeta digital de Psicología MS con teléfono, WhatsApp, correo, redes sociales y ubicación en Ciudad Satélite.'
+      : 'Psicología MS ofrece terapia en Ciudad Satélite, Naucalpan. Psicólogo profesional para ansiedad, depresión, trauma y bienestar emocional. Agenda tu sesión.';
+    const url = `${SITE_URL}${isDigitalCard ? '/tarjeta' : '/'}`;
+
+    document.title = title;
+
+    upsertMeta('meta[name="description"]', { name: 'description', content: description });
+    upsertMeta('meta[property="og:title"]', { property: 'og:title', content: title });
+    upsertMeta('meta[property="og:description"]', { property: 'og:description', content: description });
+    upsertMeta('meta[property="og:url"]', { property: 'og:url', content: url });
+    upsertMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: title });
+    upsertMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: description });
+
+    let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = url;
+  }, []);
+};
+
+const useSmoothMotion = () => {
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    const selector = [
+      'main > section:first-child .grid > div',
+      'main > section:not(:first-child) > div > .text-center',
+      'main > section:not(:first-child) > div > .grid > div',
+      'main > section:not(:first-child) > div > .flex',
+      'main > section:not(:first-child) > div > .relative',
+      'main > section:not(:first-child) > div > p',
+      'main > section:not(:first-child) > div > a',
+      'footer .grid > div',
+      'footer .border-t',
+      '#tarjeta > .relative',
+    ].join(',');
+
+    const elements = Array.from(
+      new Set(document.querySelectorAll<HTMLElement>(selector))
+    );
+
+    if (!elements.length) {
+      return;
+    }
+
+    elements.forEach((element) => {
+      element.dataset.motion = element.matches(
+        'main > section:first-child .grid > div:last-child, #tarjeta > .relative'
+      )
+        ? 'scale'
+        : 'up';
+
+      const siblings = Array.from(element.parentElement?.children ?? []);
+      const index = Math.max(0, siblings.indexOf(element));
+      element.style.setProperty('--motion-delay', `${Math.min(index * 55, 220)}ms`);
+    });
+
+    document.body.classList.add('motion-ready');
+
+    const reveal = (element: HTMLElement) => {
+      element.classList.add('is-visible');
+      element.addEventListener(
+        'transitionend',
+        () => {
+          element.style.willChange = 'auto';
+          element.classList.remove('is-visible');
+          element.removeAttribute('data-motion');
+          element.style.removeProperty('--motion-delay');
+        },
+        { once: true }
+      );
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          const element = entry.target as HTMLElement;
+          reveal(element);
+          observer.unobserve(element);
+        });
+      },
+      {
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.08,
+      }
+    );
+
+    elements.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+
+      if (rect.top < window.innerHeight * 0.9) {
+        requestAnimationFrame(() => reveal(element));
+        return;
+      }
+
+      observer.observe(element);
+    });
+
+    return () => {
+      observer.disconnect();
+      document.body.classList.remove('motion-ready');
+      elements.forEach((element) => {
+        element.classList.remove('is-visible');
+        element.removeAttribute('data-motion');
+        element.style.removeProperty('--motion-delay');
+        element.style.removeProperty('will-change');
+      });
+    };
+  }, []);
+};
 
 const Home: React.FC = () => {
   const [isWorkModalOpen, setIsWorkModalOpen] = useState(false);
@@ -33,7 +173,9 @@ const Home: React.FC = () => {
                   <div className="w-full aspect-square rounded-[4rem] overflow-hidden rotate-3 shadow-2xl ring-8 ring-white/30 backdrop-blur-md">
                     <img
                       src={acuaazul}
-                      alt="Nuestra fundadora"
+                      alt="Psicóloga de Psicología MS en Ciudad Satélite"
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover -rotate-3 scale-110"
                     />
                   </div>
@@ -56,16 +198,16 @@ const Home: React.FC = () => {
 
               <div>
                 <span className="text-secondary font-bold tracking-widest uppercase text-xs mb-4 block">
-                  Sobre mí
+                  Psicología MS
                 </span>
 
                 <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8 leading-tight">
-                  Tu bienestar es mi compromiso
+                  Tu bienestar es mi compromiso en Ciudad Satélite
                 </h2>
 
                 <div className="space-y-6 text-stone-600 font-light leading-relaxed text-lg">
                   <p>
-                    Soy psicóloga y acompaño a personas que buscan comprender lo que sienten,
+                    Soy psicóloga en Ciudad Satélite y acompaño a personas que buscan comprender lo que sienten,
                     sanar experiencias difíciles y construir una vida con mayor tranquilidad
                     y equilibrio emocional.
                   </p>
@@ -197,6 +339,9 @@ const Home: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  useRouteMeta();
+  useSmoothMotion();
+
   return window.location.pathname === '/tarjeta' ? <DigitalCard /> : <Home />;
 };
 

@@ -26,26 +26,30 @@ const Footer: React.FC = () => {
               <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white shadow-md">
                 <img
                   src={logo}
-                  alt="MS Psicoterapia"
+                  alt="Psicología MS en Ciudad Satélite"
+                  loading="lazy"
+                  decoding="async"
                   className="w-9 h-9 object-contain"
                 />
               </div>
 
               <img
                 src={brandText}
-                alt="MS Psicoterapia – Equilibrio interno"
+                alt="Psicología MS – Equilibrio interno"
+                loading="lazy"
+                decoding="async"
                 className="h-10 w-auto object-contain"
               />
             </div>
 
             <p className="text-stone-500 text-sm leading-relaxed">
-              Un espacio seguro de acompañamiento emocional. Atención profesional,
-              cercana y enfocada en tu bienestar.
+              Psicología MS en Ciudad Satélite: un espacio seguro de acompañamiento
+              emocional con atención profesional, cercana y enfocada en tu bienestar.
             </p>
 
             <div className="flex gap-4">
               <a
-                href="https://msdemo1.netlify.app"
+                href="https://psicoterapiams.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-stone-400 hover:text-primary hover:shadow-md transition"
@@ -102,6 +106,11 @@ const Footer: React.FC = () => {
               <li>
                 <a href="#contacto" className="text-stone-500 hover:text-primary text-sm transition">
                   Contacto
+                </a>
+              </li>
+              <li>
+                <a href="/tarjeta" className="text-stone-500 hover:text-primary text-sm transition">
+                  Tarjeta digital
                 </a>
               </li>
             </ul>
@@ -179,7 +188,9 @@ const Footer: React.FC = () => {
             >
               <img
                 src={ubi}
-                alt="Ubicación"
+                alt="Ubicación de Psicología MS en Ciudad Satélite"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover opacity-70 grayscale group-hover:grayscale-0 transition"
               />
 

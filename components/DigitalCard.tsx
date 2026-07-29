@@ -38,7 +38,8 @@ const DigitalCard: React.FC = () => {
               <div className="relative w-28 h-28 rounded-full bg-white shadow-xl flex items-center justify-center p-3 border border-primary/10">
                 <img
                   src={logo}
-                  alt="MS Equilibrio Interno"
+                  alt="Psicología MS en Ciudad Satélite"
+                  decoding="async"
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
@@ -46,7 +47,8 @@ const DigitalCard: React.FC = () => {
 
             <img
               src={brandText}
-              alt="MS Equilibrio Interno Psicoterapia"
+              alt="Psicología MS Equilibrio Interno Psicoterapia"
+              decoding="async"
               className="h-14 w-auto object-contain mb-6"
             />
 

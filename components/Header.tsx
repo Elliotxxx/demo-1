@@ -39,14 +39,14 @@ const Header: React.FC = () => {
             <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg group-hover:scale-105 transition-all duration-300">
               <img
                 src={logo}
-                alt="Clínica MS"
+                alt="Psicología MS en Ciudad Satélite"
                 className="w-full h-full object-cover"
               />
             </div>
 
             <img
               src={brandText}
-              alt="MS Psicoterapia – Equilibrio interno"
+              alt="Psicología MS – Equilibrio interno"
               className="h-10 w-auto object-contain"
             />
           </a>

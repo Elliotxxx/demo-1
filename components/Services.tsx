@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Users, Leaf, Baby, Shield, Smile } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import { ServiceCardProps } from '../types';
 import { HeartPulse } from "lucide-react";
 import { MessageCircle } from "lucide-react";
@@ -29,7 +29,7 @@ const Services: React.FC = () => {
     {
       icon: <User size={30} strokeWidth={1.5} />,
       title: "Terapia Individual",
-      description: "Sesiones uno a uno para explorar tus pensamientos y sentimientos en un espacio seguro y confidencial adaptado a tu crecimiento personal."
+      description: "Sesiones uno a uno en Ciudad Satélite para explorar tus pensamientos y sentimientos en un espacio seguro, confidencial y adaptado a tu crecimiento personal."
     },
     {
       icon: <HeartPulse size={30} strokeWidth={1.5} />,
@@ -69,15 +69,15 @@ const Services: React.FC = () => {
         
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-secondary font-bold tracking-widest uppercase text-xs mb-4 block">
-            Nuestras Especialidades
+            Terapia en Ciudad Satélite
           </span>
 
           <h2 className="text-4xl md:text-5xl font-serif text-primary mb-6">
-            Terapias Personalizadas
+            Psicoterapia personalizada
           </h2>
 
           <p className="text-lg text-stone-600 font-light">
-            Ofrecemos una gama de tratamientos especializados diseñados para ayudarte a navegar los desafíos de la vida con claridad y confianza.
+            Si buscas psicólogos en Ciudad Satélite, en Psicología MS encontrarás tratamientos especializados para navegar los desafíos de la vida con claridad y confianza.
           </p>
         </div>
 

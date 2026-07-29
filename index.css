@@ -5,3 +5,153 @@ html {
 body {
   margin: 0;
 }
+
+:root {
+  --motion-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes fade-scale {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes header-drop {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes modal-backdrop {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-panel {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes slide-menu {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes icon-pop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.12) rotate(-3deg);
+  }
+}
+
+header {
+  animation: header-drop 520ms var(--motion-soft) both;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 5.5s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-scale 680ms var(--motion-soft) both;
+}
+
+.animate-in.fade-in,
+.slide-in-from-top-4 {
+  animation: slide-menu 260ms var(--motion-soft) both;
+}
+
+.motion-ready [data-motion] {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition:
+    opacity 560ms var(--motion-soft),
+    transform 560ms var(--motion-soft);
+  transition-delay: var(--motion-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.motion-ready [data-motion="scale"] {
+  transform: translate3d(0, 10px, 0) scale(0.985);
+}
+
+.motion-ready [data-motion].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+#servicios .group:hover svg,
+#contacto .group:hover svg,
+footer .group:hover svg {
+  animation: icon-pop 450ms var(--motion-soft);
+}
+
+[role="dialog"] {
+  animation: modal-backdrop 180ms ease-out both;
+}
+
+[role="dialog"] > div {
+  animation: modal-panel 300ms var(--motion-soft) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .motion-ready [data-motion] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
