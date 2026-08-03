@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from "../assets/LOGO_MS (1).svg";
+import logo from "../assets/MS_individual (1).svg";
 import brandText from "../assets/MS_equilibrio_interno_slogan.svg";
 
 const Header: React.FC = () => {

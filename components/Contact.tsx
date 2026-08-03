@@ -8,7 +8,7 @@ import {
   MessageCircle,
   ArrowUpRight,
 } from "lucide-react";
-import logo from "../assets/LOGO_MS (1).svg";
+import logo from "../assets/MS_individual (1).svg";
 
 const Contact: React.FC = () => {
   return (
