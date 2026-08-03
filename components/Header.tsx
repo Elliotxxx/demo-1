@@ -25,8 +25,9 @@ const Header: React.FC = () => {
   ];
 
   return (
+    <>
     <header
-      className={`sticky top-0 z-50 w-full relative transition-all duration-300 ${
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
         isScrolled
           ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-stone-100 h-20'
           : 'bg-transparent h-24'
@@ -143,6 +144,8 @@ const Header: React.FC = () => {
         </div>
       )}
     </header>
+    <div className="h-24" aria-hidden="true"></div>
+    </>
   );
 };
 
