@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from "../assets/MS_individual (1).svg";
+import logo128 from "../assets/ms-individual-128.webp";
+import logo256 from "../assets/ms-individual-256.webp";
 import brandText from "../assets/MS_equilibrio_interno_slogan.svg";
 
 const Header: React.FC = () => {
@@ -35,19 +36,26 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-full">
           
           {/* Logo */}
-          <a href="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+          <a href="/" className="flex min-w-0 items-center gap-3 cursor-pointer group">
             <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg group-hover:scale-105 transition-all duration-300">
-              <img
-                src={logo}
-                alt="Psicología MS en Ciudad Satélite"
-                className="w-full h-full object-cover"
-              />
+              <picture className="block w-full h-full">
+                <source type="image/webp" srcSet={`${logo128} 128w, ${logo256} 256w`} sizes="48px" />
+                <img
+                  src={logo256}
+                  alt="Psicología MS en Ciudad Satélite"
+                  width={1038}
+                  height={1024}
+                  className="w-full h-full object-cover"
+                />
+              </picture>
             </div>
 
             <img
               src={brandText}
               alt="Psicología MS – Equilibrio interno"
-              className="h-10 w-auto object-contain"
+              width={788}
+              height={170}
+              className="h-10 w-auto max-w-[calc(100vw-7rem)] object-contain"
             />
           </a>
 

@@ -7,11 +7,11 @@ const CTA: React.FC = () => {
     <section className="py-32 bg-white relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="relative">
-          <div className="absolute -top-12 -left-12 text-[12rem] text-primary/5 font-serif leading-none select-none italic">"</div>
+          <div className="absolute -top-12 left-0 md:-left-12 text-[12rem] text-primary/5 font-serif leading-none select-none italic">"</div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-8 relative z-10">
             ¿Listo para iniciar terapia <br/>en Ciudad Satélite?
           </h2>
-          <div className="absolute -bottom-16 -right-12 text-[12rem] text-primary/5 font-serif leading-none select-none rotate-180 italic">"</div>
+          <div className="absolute -bottom-16 right-0 md:-right-12 text-[12rem] text-primary/5 font-serif leading-none select-none rotate-180 italic">"</div>
         </div>
         
         <p className="text-xl text-stone-600 max-w-2xl mx-auto mb-12 font-light leading-relaxed">

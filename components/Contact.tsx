@@ -8,7 +8,8 @@ import {
   MessageCircle,
   ArrowUpRight,
 } from "lucide-react";
-import logo from "../assets/MS_individual (1).svg";
+import logo128 from "../assets/ms-individual-128.webp";
+import logo256 from "../assets/ms-individual-256.webp";
 
 const Contact: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const Contact: React.FC = () => {
       className="py-24 bg-background-light relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-pattern pointer-events-none"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-primary/10 blur-[140px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[700px] aspect-square bg-primary/10 blur-[140px] rounded-full pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -44,13 +45,18 @@ const Contact: React.FC = () => {
             {/* Encabezado */}
             <div className="flex items-center gap-4 mb-10">
               <div className="w-20 h-20 rounded-3xl bg-white shadow-md flex items-center justify-center p-3 shrink-0">
-                <img
-                  src={logo}
-                  alt="Psicología MS en Ciudad Satélite"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-contain"
-                />
+                <picture className="block w-full h-full">
+                  <source type="image/webp" srcSet={`${logo128} 128w, ${logo256} 256w`} sizes="80px" />
+                  <img
+                    src={logo256}
+                    alt="Psicología MS en Ciudad Satélite"
+                    width={1038}
+                    height={1024}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-contain"
+                  />
+                </picture>
               </div>
 
               <div className="min-w-0">

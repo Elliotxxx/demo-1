@@ -9,7 +9,8 @@ import CTA from './components/CTA';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import DigitalCard from './components/DigitalCard';
-import acuaazul from "./assets/acuaazul.svg";
+import acuaazul480 from "./assets/acuaazul-480.webp";
+import acuaazul768 from "./assets/acuaazul-768.webp";
 
 const SITE_URL = 'https://psicoterapiams.com';
 
@@ -162,25 +163,34 @@ const Home: React.FC = () => {
         <Hero />
         <Services />
 
-        <section id="nosotros" className="py-24 bg-sage-light/20">
+        <section id="nosotros" className="py-24 bg-sage-light/20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
 
               <div className="relative lg:h-[600px]">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-radial from-primary/20 to-transparent blur-[100px] pointer-events-none"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full md:w-[120%] md:h-[120%] bg-gradient-radial from-primary/20 to-transparent blur-[100px] pointer-events-none"></div>
 
                 <div className="relative h-full flex items-center justify-center">
                   <div className="w-full aspect-square rounded-[4rem] overflow-hidden rotate-3 shadow-2xl ring-8 ring-white/30 backdrop-blur-md">
-                    <img
-                      src={acuaazul}
-                      alt="Psicóloga de Psicología MS en Ciudad Satélite"
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover -rotate-3 scale-110"
-                    />
+                    <picture className="block w-full h-full">
+                      <source
+                        type="image/webp"
+                        srcSet={`${acuaazul480} 480w, ${acuaazul768} 768w`}
+                        sizes="(min-width: 1280px) 584px, (min-width: 1024px) calc((100vw - 12rem) / 2), calc(100vw - 2rem)"
+                      />
+                      <img
+                        src={acuaazul768}
+                        alt="Psicóloga de Psicología MS en Ciudad Satélite"
+                        width={779}
+                        height={768}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover -rotate-3 scale-110"
+                      />
+                    </picture>
                   </div>
 
-                  <div className="absolute -bottom-8 -left-8 bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-white/50 shadow-2xl max-w-[240px] animate-bounce-slow">
+                  <div className="absolute -bottom-6 left-4 md:-bottom-8 md:-left-8 bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-white/50 shadow-2xl max-w-[240px] animate-bounce-slow">
                     <span className="material-symbols-outlined text-primary text-4xl mb-4">
                       verified_user
                     </span>

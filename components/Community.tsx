@@ -13,14 +13,14 @@ const Community: React.FC = () => {
   return (
     <section className="py-24 bg-sage-light/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 border-b border-primary/10 pb-8">
-          <div className="max-w-2xl">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8 border-b border-primary/10 pb-8">
+          <div className="w-full max-w-2xl">
             <h2 className="text-4xl md:text-5xl font-serif text-primary mb-6">Recursos de Psicología MS</h2>
             <p className="text-stone-600 text-lg font-light">
               Síguenos en Instagram para obtener consejos diarios de mindfulness, recursos de salud mental e historias inspiradoras para tu bienestar emocional.
             </p>
           </div>
-          <a href="https://instagram.com/ms.psicoterapia.mx" className="flex items-center gap-3 text-primary font-bold hover:opacity-70 transition-opacity group">
+          <a href="https://instagram.com/ms.psicoterapia.mx" className="flex max-w-full items-center gap-3 text-primary font-bold hover:opacity-70 transition-opacity group">
             <span className="text-lg">@ms.psicoterapia.mx</span>
             <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
@@ -34,7 +34,11 @@ const Community: React.FC = () => {
             >
               <img 
                 src={src} 
+                srcSet={`${src.replace('w=800', 'w=320')} 320w, ${src.replace('w=800', 'w=480')} 480w, ${src.replace('w=800', 'w=640')} 640w, ${src} 800w`}
+                sizes="(min-width: 1280px) 280px, (min-width: 768px) calc((100vw - 7rem) / 4), calc((100vw - 3rem) / 2)"
                 alt={`Recurso de salud mental de Psicología MS ${i + 1}`}
+                width={800}
+                height={800}
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 

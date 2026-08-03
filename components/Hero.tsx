@@ -1,7 +1,9 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
-import consultorio from "../assets/session.svg";
+import consultorio480 from "../assets/session-480.webp";
+import consultorio768 from "../assets/session-768.webp";
+import consultorio1195 from "../assets/session-1195.webp";
 
 const Hero: React.FC = () => {
   return (
@@ -49,13 +51,15 @@ const Hero: React.FC = () => {
                     key={i}
                     src={`https://picsum.photos/seed/${i + 40}/100/100`}
                     alt={`Testimonio ${i}`}
+                    width={100}
+                    height={100}
                     loading="lazy"
                     decoding="async"
                     className="w-12 h-12 rounded-full border-4 border-white object-cover shadow-sm"
                   />
                 ))}
               </div>
-              <div className="flex flex-col">
+              <div className="flex min-w-0 flex-col">
                 <div className="flex text-yellow-500">
                   {[1, 2, 3, 4, 5].map((s) => (
                     <Star key={s} size={14} fill="currentColor" />
@@ -67,18 +71,27 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="relative lg:h-auto mt-8 lg:mt-0">
-            <div className="absolute -top-12 -right-12 w-80 h-80 bg-secondary/20 rounded-full blur-3xl mix-blend-multiply"></div>
-            <div className="absolute -bottom-12 -left-12 w-80 h-80 bg-primary/20 rounded-full blur-3xl mix-blend-multiply"></div>
+            <div className="absolute -top-12 right-0 sm:-right-12 w-64 h-64 sm:w-80 sm:h-80 bg-secondary/20 rounded-full blur-3xl mix-blend-multiply"></div>
+            <div className="absolute -bottom-12 left-0 sm:-left-12 w-64 h-64 sm:w-80 sm:h-80 bg-primary/20 rounded-full blur-3xl mix-blend-multiply"></div>
             
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-white aspect-[4/5] md:aspect-[4/3] group ring-1 ring-black/5">
-           <img
-  src={consultorio}
-  alt="Consultorio de terapia en Ciudad Satélite"
-  loading="eager"
-  decoding="async"
-  fetchPriority="high"
-  className="w-full h-full object-cover object-[60%_40%] transition-transform duration-1000 group-hover:scale-105"
-/>
+              <picture className="block w-full h-full">
+                <source
+                  type="image/webp"
+                  srcSet={`${consultorio480} 480w, ${consultorio768} 768w, ${consultorio1195} 1195w`}
+                  sizes="(min-width: 1280px) 584px, (min-width: 1024px) calc((100vw - 12rem) / 2), calc(100vw - 2rem)"
+                />
+                <img
+                  src={consultorio1195}
+                  alt="Consultorio de terapia en Ciudad Satélite"
+                  width={1195}
+                  height={896}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  className="w-full h-full object-cover object-[60%_40%] transition-transform duration-1000 group-hover:scale-105"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8 text-white">
                 <p className="font-serif text-2xl italic">"Un espacio para sanar"</p>

@@ -12,7 +12,8 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import logo from "../assets/MS_individual (1).svg";
+import logo128 from "../assets/ms-individual-128.webp";
+import logo256 from "../assets/ms-individual-256.webp";
 import brandText from "../assets/MS_equilibrio_interno_slogan.svg";
 
 const DigitalCard: React.FC = () => {
@@ -23,9 +24,9 @@ const DigitalCard: React.FC = () => {
     >
       <div className="absolute inset-0 bg-pattern pointer-events-none"></div>
 
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-secondary/30 rounded-full blur-[120px] animate-pulse"></div>
-      <div className="absolute top-1/3 -right-32 w-96 h-96 bg-accent/30 rounded-full blur-[120px] animate-pulse"></div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[150px]"></div>
+      <div className="absolute top-0 left-0 sm:-top-32 sm:-left-32 w-72 h-72 sm:w-96 sm:h-96 bg-secondary/30 rounded-full blur-[120px] animate-pulse"></div>
+      <div className="absolute top-1/3 right-0 sm:-right-32 w-72 h-72 sm:w-96 sm:h-96 bg-accent/30 rounded-full blur-[120px] animate-pulse"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] aspect-square bg-primary/20 rounded-full blur-[150px]"></div>
 
       <div className="relative max-w-xl mx-auto">
         <div className="bg-white/80 backdrop-blur-2xl rounded-[3rem] shadow-2xl border border-white/70 p-8 md:p-10 overflow-hidden relative animate-fade-in">
@@ -36,20 +37,27 @@ const DigitalCard: React.FC = () => {
               <div className="absolute inset-0 bg-primary/30 rounded-full blur-xl animate-ping"></div>
 
               <div className="relative w-28 h-28 rounded-full bg-white shadow-xl flex items-center justify-center p-3 border border-primary/10">
-                <img
-                  src={logo}
-                  alt="Psicología MS en Ciudad Satélite"
-                  decoding="async"
-                  className="w-full h-full object-cover rounded-full"
-                />
+                <picture className="block w-full h-full">
+                  <source type="image/webp" srcSet={`${logo128} 128w, ${logo256} 256w`} sizes="112px" />
+                  <img
+                    src={logo256}
+                    alt="Psicología MS en Ciudad Satélite"
+                    width={1038}
+                    height={1024}
+                    decoding="async"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </picture>
               </div>
             </div>
 
             <img
               src={brandText}
               alt="Psicología MS Equilibrio Interno Psicoterapia"
+              width={788}
+              height={170}
               decoding="async"
-              className="h-14 w-auto object-contain mb-6"
+              className="h-auto max-h-14 w-auto max-w-full object-contain mb-6"
             />
 
             <span className="inline-flex items-center gap-2 bg-sage-light px-5 py-2 rounded-full text-primary text-xs font-bold tracking-widest uppercase mb-6">

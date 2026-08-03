@@ -9,8 +9,11 @@ import {
   MessageCircle
 } from 'lucide-react';
 
-import ubi from "../assets/ubi.png";
-import logo from "../assets/MS_individual (1).svg";
+import ubi320 from "../assets/ubi-320.webp";
+import ubi640 from "../assets/ubi-640.webp";
+import ubi1058 from "../assets/ubi-1058.webp";
+import logo128 from "../assets/ms-individual-128.webp";
+import logo256 from "../assets/ms-individual-256.webp";
 import brandText from "../assets/MS_equilibrio_interno_slogan.svg";
 
 const Footer: React.FC = () => {
@@ -22,23 +25,30 @@ const Footer: React.FC = () => {
 
           {/* BRAND */}
           <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 min-w-0">
               <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white shadow-md">
-                <img
-                  src={logo}
-                  alt="Psicología MS en Ciudad Satélite"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-9 h-9 object-contain"
-                />
+                <picture className="block w-9 h-9">
+                  <source type="image/webp" srcSet={`${logo128} 128w, ${logo256} 256w`} sizes="36px" />
+                  <img
+                    src={logo256}
+                    alt="Psicología MS en Ciudad Satélite"
+                    width={1038}
+                    height={1024}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-9 h-9 object-contain"
+                  />
+                </picture>
               </div>
 
               <img
                 src={brandText}
                 alt="Psicología MS – Equilibrio interno"
+                width={788}
+                height={170}
                 loading="lazy"
                 decoding="async"
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto max-w-full object-contain"
               />
             </div>
 
@@ -186,13 +196,22 @@ const Footer: React.FC = () => {
               rel="noopener noreferrer"
               className="block w-full h-56 rounded-3xl overflow-hidden relative shadow-inner group hover:scale-[1.02] transition"
             >
-              <img
-                src={ubi}
-                alt="Ubicación de Psicología MS en Ciudad Satélite"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover opacity-70 grayscale group-hover:grayscale-0 transition"
-              />
+              <picture className="block w-full h-full">
+                <source
+                  type="image/webp"
+                  srcSet={`${ubi320} 320w, ${ubi640} 640w, ${ubi1058} 1058w`}
+                  sizes="(min-width: 1024px) 280px, (min-width: 768px) calc((100vw - 8rem) / 2), calc(100vw - 2rem)"
+                />
+                <img
+                  src={ubi640}
+                  alt="Ubicación de Psicología MS en Ciudad Satélite"
+                  width={1058}
+                  height={733}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover opacity-70 grayscale group-hover:grayscale-0 transition"
+                />
+              </picture>
 
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="bg-primary text-white p-3 rounded-full shadow-lg animate-bounce">
